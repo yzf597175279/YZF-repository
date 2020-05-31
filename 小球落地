@@ -1,0 +1,14 @@
+#include <iostream>
+
+int main()
+{
+    int sum = 0, high = 80;//sum为路径之合，high表示当前高度
+    for (int i = 0; i < 5; i++)
+    {
+        sum = high + high / 2 + sum;//落地+弹起+已经过的路程
+        high = high / 2;//每次弹起为前一次一半
+    }
+    sum = sum-high;//最后总路程要减去第10次弹起
+    printf("共经过%d米\n", sum);
+    printf("第五次反弹%d米高\n", high);
+}
